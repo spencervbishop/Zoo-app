@@ -1,0 +1,16 @@
+<div class="container pb-4">
+  <agm-map class="card" [latitude]= lat [longitude]= lng [zoom]=15 [minZoom]=15 [maxZoom]=17>
+    <agm-marker  *ngFor= "let d of httpdata; let i = index" [latitude]=d.latitude [longitude]= d.longitude> 
+      <agm-snazzy-info-window [maxHeight]=600 padding="18px"  [maxWidth]=600  [closeWhenOthersOpen]="true">
+        <ng-template> 
+          <img style="width:100%" src="{{pictures[d.animal.animalName]}}"/>
+          <div style="background-color: #263238"><h4 class="pl-2 py-3 text-white">{{d.animal.animalName}}</h4></div>
+          <button name="" class="ml-2 btn border-0 bg-white " (click)="myfunction(d.animal.animalId)"><img src="assets/clicked.png"/></button>
+          <p class="lead mt-2"><strong class="pr-5">Scientific Name <br></strong>{{d.animal.scientificName}}</p>
+          <p class="lead pr-4"><strong>Fun Fact <br></strong>{{d.animal.funFact}}</p>
+          <p class="lead pr-4"><strong>Summary <br> </strong>{{d.animal.summary}}</p> 
+        </ng-template>
+      </agm-snazzy-info-window>
+    </agm-marker>
+  </agm-map>
+</div>

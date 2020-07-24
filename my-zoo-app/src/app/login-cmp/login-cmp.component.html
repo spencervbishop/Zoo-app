@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row d-flex justify-content-center">
+    <section class="login-form  col-md-4">
+      <form method="post" action="#" role="login">
+        <input type="text" name="username" placeholder="Username" class="form-control input-lg" [(ngModel)]=username />
+        <input type="password" name="password" class="form-control input-lg my-2"  placeholder="Password" [(ngModel)]=password  />
+        <div class="pwstrength_viewport_progress"></div>
+        <button type="submit" name="go" class="btn btn-info btn-lg btn-block" (click)="onClickSubmit($event)">Sign in</button>
+        <div *ngIf="step=='Good'; else condition1" class="progress mt-2">
+          <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+        </div>
+        <div *ngIf="step=='Wrong'" class="alert alert-danger mt-2" role="alert">
+           User information Incorrect!
+        </div>
+      </form>
+    </section>  
+  </div>
+</div>     

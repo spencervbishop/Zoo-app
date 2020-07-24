@@ -1,0 +1,21 @@
+<h3>Inventory</h3>
+<table class="data-table table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Item</th>
+        <th scope="col">Quantity (Kg)</th>
+        <th scope="col">Next Delivery</th>
+        <th scope="col">Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of inventory">
+        <th scope="row">{{item.foodId}}</th>
+        <td>{{item.foodName}}</td>
+        <td>{{item.amount}}</td>
+        <td>{{item.nextDelivery}}</td>
+        <td>{{item.notes}}</td>
+      </tr>
+    </tbody>
+  </table>

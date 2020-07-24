@@ -1,0 +1,19 @@
+<h3>Animal Information</h3>
+<table class="data-table table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Animal</th>
+        <th scope="col">Notes</th>
+        <th scope="col">Food</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let anm of httpdata">
+        <th scope="row">{{anm.animalId}}</th>
+        <td>{{anm.animalName}}</td>
+        <td>{{anm.notes}}</td>
+        <td *ngFor="let i of anm.food">{{i.foodName}}</td>
+      </tr>
+    </tbody>
+  </table>

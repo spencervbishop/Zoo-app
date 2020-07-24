@@ -1,0 +1,35 @@
+ <div class="container">
+ <ul class="nav nav-pills mb-3 border" id="pills-tab" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" id="home-tab" data-toggle="pill" href="#home" role="tab" aria-controls="home" aria-selected="true">Personal</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="animal-tab" data-toggle="pill" href="#animal" role="tab" aria-controls="animal" aria-selected="false">Animals</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="inventory-tab" data-toggle="pill" href="#inventory" role="tab" aria-controls="inventory" aria-selected="false">Inventory</a>
+      </li>
+      <li  *ngIf="zookeeper.title=='manager'" class="nav-item">
+        <a class="nav-link" id="stats-tab" data-toggle="pill" href="#stats" role="tab" aria-controls="stats" aria-selected="false">Statistics</a>
+      </li>
+    <button class="btn btn-success ml-auto" (click)="signOut($event)">Log Out</button>
+  </ul>
+  
+  <div  class="tab-content" id="pills-tabContent">
+      <div  class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+        <h3>Welcome {{zookeeper.firstname}}</h3>
+          <p><span><strong>Role: </strong></span>{{zookeeper.title}}</p>
+          <p><span><strong>Name: </strong></span>{{zookeeper.firstname}} {{zookeeper.lastname}}</p>
+          <p><span><strong>Username: </strong></span>{{zookeeper.username}}</p>
+      </div>
+      <div class="tab-pane fade " id="animal" role="tabpanel" aria-labelledby="animal-tab">
+        <app-animal-cmp></app-animal-cmp>
+      </div>
+      <div class="tab-pane fade" id="inventory" role="tabpanel" aria-labelledby="inventory-tab">
+        <app-inventory-cmp></app-inventory-cmp>
+      </div>
+      <div class="tab-pane fade" id="stats" role="tabpanel" arial-labelledby="stats-tab">
+        <app-pie-cmp> </app-pie-cmp>
+      </div>
+    </div>
+  </div>

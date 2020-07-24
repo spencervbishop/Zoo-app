@@ -1,0 +1,18 @@
+/* .tab-content {
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    padding: 15px;
+}
+
+.nav-tabs {
+    margin-bottom: 0;
+}
+
+.tab-pane{
+    position: absolute;
+} */
+
+.data-table tr{
+    border-width: 30px;
+
+}
